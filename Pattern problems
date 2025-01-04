@@ -1,1 +1,798 @@
+1. Half pyramid
+----------------------
 
+Test Case:
+----------------------
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+
+PROGRAM:
+------------------------
+#include <stdio.h>
+int main() {
+    int n=5;
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            printf("%d ",j);
+        }
+        printf("\n");
+        
+    }
+}
+
+2. Inverted half pyramid of numbers
+------------------------------------
+
+TEST CASE:
+-------------------
+1 2 3 4 5 
+2 3 4 5 
+3 4 5 
+4 5 
+5
+
+
+PROGRAM:
+--------------------------
+#include <stdio.h>
+int main() {
+    int n=5;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=i;j<=n;j++)
+        {
+            printf("%d ",j);
+        }
+        printf("\n");
+        
+    }
+}
+
+3. Floyd's triangle
+-----------------
+
+TEST CASES:
+--------------------------
+ 1 
+ 2  3 
+ 4  5  6 
+ 7  8  9 10 
+11 12 13 14 15
+
+PROGRAM:
+-------------------------------
+#include <stdio.h>
+int main() {
+    int n=5;
+    int k=1;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            printf("%4d ",k);
+             k++;
+        }
+        printf("\n");
+    }
+}
+
+4. With space between stars
+------------------------------
+TEST CASE:
+-------------------------
+        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * * 
+
+PROGRAM:
+----------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <=n; i++) {
+        for (int j = i; j<n; j++) {
+            printf("  "); //2 spaces to align properly
+        }
+        for (int k = 1; k <= i; k++) {
+            printf("* "); //one space here
+        }
+        printf("\n");
+    }
+} 
+
+or you can use formula to calculate spaces:
+for example: there will be 8 spaces needed to print first star:
+
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <=n; i++) {
+        for (int j = 1; j<=2*(n-i); j++) {
+            printf(" "); //here single space
+        }
+        for (int k = 1; k <= i; k++) {
+            printf("* "); 
+        }
+        printf("\n");
+    }
+} 
+
+5.  without space between stars:
+----------------------------------------
+TEST CASES:
+-------------------------
+       * 
+      ** 
+     *** 
+    **** 
+   ***** 
+
+PROGRAM:
+-------------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <=n; i++) {
+        for (int j = i; j<n; j++) {
+            printf(" ");  //single space
+        }
+        for (int k = 1; k <= i; k++) {
+            printf("*");  //no space gere
+        }
+        printf("\n");
+    }
+}
+
+6. full pyramid:
+--------------------------
+
+TEST CASES:
+----------------------
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * *
+
+PROGRAM:
+---------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <=n; i++) {
+        for (int j = i; j<n; j++) {
+            printf(" "); 
+        }
+        for (int k = 1; k <= i; k++) {
+            printf("* "); //single space, print k for numbers
+        }
+        printf("\n");
+    }
+}
+
+7. TEST CASES:
+--------------------------
+        A 
+      A B 
+    A B C 
+  A B C D 
+A B C D E
+
+PROGRAM:
+----------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <=n; i++) {
+        for (int j = i; j<n; j++) {
+            printf("  "); 
+        }
+        for (int k = 0; k < i; k++) {
+            printf("%c ",'A'+k); //observe loop starts with 0 for printing alphabets
+        }
+        printf("\n");
+    }
+}
+
+8. TEST CASES:
+---------------------
+        A 
+      B C 
+    D E F 
+  G H I J 
+K L M N O
+
+PROGRAM:
+------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    char ch='A';
+    for (int i = 1; i <=n; i++) {
+        for (int j = i; j<n; j++) {
+            printf("  "); 
+        }
+        for (int k = 1; k <=i; k++) {
+            printf("%c ",ch++); 
+        }
+        printf("\n");
+    }
+}
+
+9. TEST CASES:
+-------------------------
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        *
+
+PROGRAM:
+-----------------------
+#include <stdio.h>
+
+int main()
+{
+  int n=5;
+  for(int i=n;i>=1;i--)
+  {
+      for(int j=i;j<n;j++)
+      {
+          printf("  ");  //2 spaces
+      }
+      for(int j=1;j<=i;j++)
+      {
+          printf("* ");
+      }
+      printf("\n");
+  }
+    return 0;
+}
+
+ANother approach
+------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = n; i >=1; i--) {  
+
+        for (int j = 1; j <= 2 * (n - i); j++) {  
+            printf(" ");
+        }
+        for (int k = 1; k <=i; k++) { 
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+10. TEST CASES:
+---------------------------
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    *
+
+PROGRAM:
+----------------------
+#include <stdio.h>
+
+int main()
+{
+  int n=5;
+  for(int i=n;i>=1;i--)
+  {
+      for(int j=i;j<n;j++)
+      {
+          printf(" ");  //single space
+      }
+      for(int j=1;j<=i;j++)
+      {
+          printf("* ");
+      }
+      printf("\n");
+  }
+    return 0;
+}
+
+11. // C Program to print the rhombus pattern using * star
+
+TEST CASES:
+-------------------------
+    * * * * * 
+   * * * * * 
+  * * * * * 
+ * * * * * 
+* * * * *
+
+PROGRAM:
+--------------------------
+#include <stdio.h>
+int main()
+{
+    int rows = 5;
+
+    for (int i = 1; i <=rows; i++) {
+
+        for (int j = 1; j <=rows - i; j++) {
+            printf(" ");
+        }
+        for (int k = 1; k <=rows; k++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+12. TEST CASES:
+-------------------------
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    *
+
+PROGRAM:
+-----------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <=n; i++) {
+        for (int j = i; j<n; j++) {
+            printf(" "); //single space
+        }
+        for (int k = 1; k <= i; k++) {
+            printf("* "); 
+        }
+        printf("\n");
+    }
+    for(int i=n-1;i>=1;i--)
+    {
+        for(int j=i;j<n;j++)
+        {
+            printf(" "); //single space
+        }
+        for(int k=1;k<=i;k++)
+        printf("* ");
+        
+        printf("\n");
+    }
+}
+
+12. same as above program with 2 spaces:
+-----------------------------------
+
+TEST CASES:
+----------------------------
+        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        *
+
+PROGRAM:
+---------------------------
+
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <=n; i++) {
+        for (int j = i; j<n; j++) {
+            printf("  "); //2 spaces
+        }
+        for (int k = 1; k <= i; k++) {
+            printf("* "); 
+        }
+        printf("\n");
+    }
+    for(int i=n-1;i>=1;i--)
+    {
+        for(int j=i;j<n;j++)
+        {
+            printf("  "); //2 spaces
+        }
+        for(int k=1;k<=i;k++)
+        printf("* ");
+        
+        printf("\n");
+    }
+}
+
+13. TEST CASES:
+-----------------------------
+        * 
+      * * * 
+    * * * * * 
+  * * * * * * * 
+* * * * * * * * *
+
+PROGRAM:
+---------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  "); // 2 spaces
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            printf("* "); // Single space after each star
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+(OR)
+
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < 2 * (n - i); j++) {
+            printf(" "); //single space
+        }
+        for (int k = 0; k < 2 * i - 1; k++) {
+            printf("* "); 
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+14. TEST CASES:
+--------------------------
+        1 
+      1 2 3 
+    1 2 3 4 5 
+  1 2 3 4 5 6 7 
+1 2 3 4 5 6 7 8 9
+
+PROGRAM:
+--------------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            printf("  "); // 2 spaces
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            printf("%d ",k); // Single space after each star
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+14. TEST CASES:
+------------------------
+        1 
+      1 2 
+    1 2 3 
+  1 2 3 4 
+1 2 3 4 5
+
+PROGRAM:
+---------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n-i;j++)
+        {
+            printf("  ");//2 spaces
+        }
+        for(int k=1;k<=i;k++)
+        {
+            printf("%d ",k);
+        }
+        printf("\n");
+    }
+}
+
+15. TEST CASES:
+----------------------------------
+        1 
+      1 3 
+    1 3 5 
+  1 3 5 7 
+1 3 5 7 9
+
+PROGRAM:
+----------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n-i;j++)
+        {
+            printf("  ");//2 spaces
+        }
+        int a=1;
+        for(int k=1;k<=i;k++)
+        {
+            printf("%d ",a);
+            a+=2;
+        }
+        printf("\n");
+    }
+}
+
+16. TEST CASES:
+----------------------------------
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * *
+
+PROGRAM:
+-----------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j < i; j++) {
+            printf(" "); //single space
+        }
+        for (int k = i; k <= n; k++) {
+           printf("* ");
+        }
+        printf("\n");
+    }
+     for (int i = n-1; i >= 1; i--) {
+        for (int j = 1; j < i; j++) {
+            printf(" "); //single space
+        }
+        for (int k = i; k <= n; k++) {
+           printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+17. TEST CASES:
+-------------------------
+A B C D E 
+ A B C D 
+  A B C 
+   A B 
+    A 
+   A B 
+  A B C 
+ A B C D 
+A B C D E
+
+PROGRAM:
+------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+   for(int i=n;i>=1;i--)
+    {
+        for(int j=i;j<n;j++)
+        {
+            printf(" "); //single space
+        }
+        for(int k=0;k<i;k++)
+        printf("%c ",'A'+k);
+        
+        printf("\n");
+    }
+    for (int i = n-1; i>0; i--) {
+        for (int j = 1; j<i; j++) {
+            printf(" "); //single space
+        }
+        char ch='A';
+        for (int k = n; k>=i; k--) {
+            printf("%c ",ch++); 
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+18. TEST CASES:
+----------------------------
+        * 
+      *   * 
+    *       * 
+  *           * 
+* * * * * * * * *
+
+PROGRAM:
+--------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < 2 * (n - i); j++) {
+            printf(" "); // Spaces for alignment
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            if (k == 1 || k == 2 * i - 1 || i == n) {
+                printf("* "); // Print stars at the edges or last row
+            } else {
+                printf("  "); // Hollow space
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+19. TEST CASES:
+----------------------------
+        1 
+      1   3 
+    1       5 
+  1           7 
+1 2 3 4 5 6 7 8 9
+
+PROGRAM:
+----------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < 2 * (n - i); j++) {
+            printf(" "); // Spaces for alignment
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            if (k == 1 || k == 2 * i - 1 || i == n) {
+                printf("%d ",k); // Print stars at the edges or last row
+            } else {
+                printf("  "); // Hollow  2 space
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+21. TEST CASES:
+------------------------------
+         A 
+       A   C 
+     A       E 
+   A           G 
+ A B C D E F G H I
+
+PROGRAM:
+-------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < 2 * (n - i); j++) {
+            printf(" "); 
+        }
+       
+        char ch = 'A'; 
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            if (k == 1 || k == 2 * i - 1 || i == n) {
+                printf("%c ", ch); 
+            } else {
+                printf("  ");
+            }
+            ch ++;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+another approach
+--------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 2 * (n - i)-1; j++) {
+            printf(" "); // Spaces for alignment
+        }
+        for (int k = 0; k < 2 * i + 1; k++) {
+            if (k == 0 || k == 2 * i || i == n-1) {
+                printf("%c ",k+'A'); // Print stars at the edges or last row
+            } else {
+                printf("  "); // Hollow 2 space
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+22. TEST CASES:
+-----------------------------
+        * 
+      *   * 
+    *       * 
+  *           * 
+*               * 
+  *           * 
+    *       * 
+      *   * 
+        *
+
+PROGRAM:
+-----------------------------
+#include <stdio.h>
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < 2 * (n - i); j++) {
+            printf(" "); 
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            if (k == 1 || k == 2 * i - 1 ) {
+                printf("* ");
+            } else {
+                printf("  ");//2 spaces 
+            }
+        }
+        printf("\n");
+    }
+     for (int i = n-1; i >=1; i--) {
+        for (int j = 0; j < 2 * (n - i); j++) {
+            printf(" ");
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            if (k == 1 || k == 2 * i-1) {
+                printf("* ");
+            } else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
